@@ -136396,10 +136396,10 @@
   <script>
 
     const listWrapper = document.querySelector('#list');
-    const listHtml = data.reduce((acc, cur) => {
+    const listHtml = data.reduce((acc, cur, idx) => {
       return acc + `
         <details data-word="${cur.lemma}">
-          <summary>${cur.lemma}</summary>
+          <summary><span style="font-size: 14px; color: #ccc;">${idx}:</span> ${cur.lemma}</summary>
           <div class="contentNode">
           </div>
         </details>
