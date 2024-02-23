@@ -136399,7 +136399,7 @@
     const listHtml = data.reduce((acc, cur, idx) => {
       return acc + `
         <details data-word="${cur.lemma}">
-          <summary><span style="font-size: 14px; color: #ccc;">${idx}:</span> ${cur.lemma}</summary>
+          <summary><span style="font-size: 14px; color: #ccc;">${idx + 1}:</span> ${cur.lemma}</summary>
           <div class="contentNode">
           </div>
         </details>
