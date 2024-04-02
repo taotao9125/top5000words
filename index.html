@@ -30,6 +30,10 @@
     a {
       text-decoration: none;
     }
+    
+    .list-group-item:hover {
+      background-color: #efefef;
+    }
   </style>
 </head>
 <body>
@@ -94,7 +98,7 @@
        
         
         const pathbadgeHtml = (el.path && el.path[0]) ? `
-            <span style="background-color: ${colors[0]}!important;" class="badge text-bg-secondary">
+            <span style="background-color: ${colors[0]}!important; float: right;" class="badge text-bg-secondary">
               ${el.path[0]}
             </span>
         ` : '';
@@ -121,8 +125,7 @@
       document.querySelector('#container').innerHTML = getHtml(data);
     }
 
-    render(data);
-   
+    render(rebuildLevelData(data))
     
 
     document.querySelector('#shuffle').addEventListener('click', () => {
