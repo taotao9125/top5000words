@@ -40,6 +40,7 @@
     </div> -->
   </div>
   <div class="sort">
+    <button id="level" type="button" class="btn btn-info">level</button>
     <button id="shuffle" type="button" class="btn btn-info">shuffle</button>
     <button id="reset" type="button" class="btn btn-info">reset</button>
   </div>
@@ -69,6 +70,16 @@
         l--
       }
       return arr
+    }
+
+    function rebuildLevelData(data) {
+      return [
+        'A1',
+        'A2',
+        'B1',
+        'B2',
+        'C1'
+      ].map(l => data.filter(el => l === el.part[0]?.split('=')[1])).flat(Infinity);
     }
 
     function getHtml(data) {
@@ -122,6 +133,10 @@
       render(data);
     });
 
+
+    document.querySelector('#level').addEventListener('click', () => {
+      render(rebuildLevelData(data))
+    });
 
   </script>
 </body>
